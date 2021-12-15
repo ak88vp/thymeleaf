@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p><a th:href="@{/products}">back</a> </p>
+
+    <input type="hidden" name="id" th:value="${product.getId()}">
+    <input type="text" name="name" th:value="${product.getName()}">
+    <input type="text" name="price" th:value="${product.getPrice()}">
+    <input type="text" name="description" th:value="${product.getDescription()}">
+    <input type="text" name="producer" th:value="${product.getProducer()}">
+
+
+</body>
+</html>

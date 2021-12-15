@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+    <h1>Products</h1>
+    <form action="">
+        <input type="text" name="name" placeholder="nhập tên">
+        <button>Tìm</button>
+    </form>
+
+    <p><a th:href="@{/products/createProduct}">Create new product</a> </p>
+    <table id = "customers">
+        <tr>
+            <td>Tên</td>
+            <td>Gía</td>
+            <td>Mô tả</td>
+            <td>Nhà sx</td>
+            <td>Sửa</td>
+            <td>xóa</td>
+        </tr>
+        <tr th:each="prd :${products}" >
+            <td><a th:href="@{/products/__${prd.getId()}__/viewProduct}" th:text="${prd.getName()}" ></a></td>
+            <td th:text="${prd.getPrice()}"></td>
+            <td th:text="${prd.getDescription()}"></td>
+            <td th:text="${prd.getProducer()}"></td>
+            <td><a th:href="@{/products/__${prd.getId()}__/editProduct}">Sửa</a></td>
+            <td><a th:href="@{/products/__${prd.getId()}__/deleteProduct}"
+                   onclick="if (confirm('Delete selected item?')){return true;}else{event.stopPropagation(); event.preventDefault();};" title="Link Title">
+                Xóa</a></td>
+        </tr>
+    </table>
+</center>
+</body>
+
+</html>

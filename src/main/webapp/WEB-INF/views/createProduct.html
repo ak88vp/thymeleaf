@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head"></head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p><a th:href="@{/products}">Back</a></p>
+<form method="post">
+    <input type="text" name="id">
+    <input type="text" name="name">
+    <input type="text" name="price">
+    <input type="text" name="description">
+    <input type="text" name="producer">
+    <button> create</button>
+</form>
+
+</body>
+</html>
